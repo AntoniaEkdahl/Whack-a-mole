@@ -1,8 +1,9 @@
-import { HostListener, Injectable } from '@angular/core';
+import {Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
+
 export class MoleService {
   lastSelectedHole!: number; // doesnt really know why but VSC put in ! so it worked. 
   timeUp:boolean = false; // to useto continue methods ex molesUpDown 
@@ -13,7 +14,6 @@ export class MoleService {
   randomTime(min: number, max: number): number {
     return Math.round(Math.random() * (max - min) + min);
   }
-
 
   //method that will choose a random cell, and checks if it was the last cell to be chosen,
   //if so it will look for another one, and put it into the variable "lastHole"
@@ -37,7 +37,6 @@ export class MoleService {
       setTimeout(() => {
         hole.classList.remove('moleup');
         if (!this.timeUp) this.moleUpDown();
-      }, 4000);  
+      }, 2000);  
   }
-
 }

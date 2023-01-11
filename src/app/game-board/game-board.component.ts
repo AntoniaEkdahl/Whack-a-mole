@@ -1,7 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { MoleService } from '../mole.service';
-
-
 
 @Component({
   selector: 'app-game-board',
@@ -9,22 +7,14 @@ import { MoleService } from '../mole.service';
   styleUrls: ['./game-board.component.css'],
 })
 export class GameBoardComponent{
-//@Output() onClick = new EventEmitter<string>();
-
-
   timer: number = 7;
   scoreCounter: number = 0;
   lastHole: number = 0;
   btnDisabled: boolean = false;
-  moleVisable: boolean = false;
-  moleup: boolean = false;
-  parentNode: any;
-
 
   constructor(
     private __moleService:MoleService
-  ){
-  }
+  ){ }
 
   // Method that will decrease time with -1 util it reaches 0.
   timerDecreaseByOne() {
@@ -40,9 +30,9 @@ export class GameBoardComponent{
     this.timer = 7; // reset countdown to correct game time when the game starts 
     let timer = setInterval(() => {
       if (this.timer === 0) {
+        this.__moleService.timeUp=true;
         this.btnDisabled = false;
         clearInterval(timer);
-        this.__moleService.timeUp=true;
       }
       this.timerDecreaseByOne();
     }, 1000);
@@ -55,7 +45,6 @@ export class GameBoardComponent{
       event.target.classList.remove('moleup');    
     }
     
-
   //When the game starts the "start game"-btn will not function,
   //reset points to 0,
   //start the countdown timer,
@@ -65,8 +54,6 @@ export class GameBoardComponent{
     this.scoreCounter = 0; // reset scorecount to 0.
     this.startTimer()
     this.__moleService.timeUp=false;
-    this.__moleService.moleUpDown();
-    this.__moleService.moleUpDown();
     this.__moleService.moleUpDown();
   }
 }
