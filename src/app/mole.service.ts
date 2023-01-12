@@ -37,13 +37,11 @@ export class MoleService {
      moleUpDown() {
       let mole = document.querySelectorAll('.mole');
       const hole = this.randomCell(mole);
-      console.log(hole);
       hole.classList.add('moleup');
       setTimeout(() => {
         hole.classList.remove('moleup');
         if (!this.__timerService.timeUp.timeUp) this.moleUpDown();
       }, 1000);
     }
-  
 
 }

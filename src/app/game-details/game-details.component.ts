@@ -13,12 +13,13 @@ import { MoleService } from '../mole.service';
 export class GameDetailsComponent {
   timer!: Timer;
   @Input() points:number=0; 
-  btn: Btn = {disabled:false};
+  btn!: Btn;
 
 constructor(
   private __timerService: TimerService,
   private __moleService:MoleService) {
     this.timer = this.__timerService.timer;
+    this.btn = this.__timerService.btn;
    }
 
   //When the game starts the "start game"-btn will not function,
