@@ -10,6 +10,7 @@ import { GameDetailsComponent } from './game-details/game-details.component';
 import { TimerService } from './timer.service';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { LeaderboardService } from './leaderboard.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { NavigationComponent } from './navigation/navigation.component';
   ],
   providers: [
     MoleService,
-    TimerService],
+    TimerService,
+    LeaderboardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
