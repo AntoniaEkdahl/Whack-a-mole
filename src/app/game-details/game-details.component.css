@@ -2,14 +2,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1em;
-  gap: 160px;
+  font-size: 1.3em;
+  gap: 130px;
+  color: rgba(255, 255, 255, 0.649);
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .gameTimer,
 .gamePoints {
   font-size: 2em;
-  font-weight: bold;
 }
 
 .btn {
@@ -19,7 +21,8 @@
   border: solid black 3px;
   font-size: 0.7em;
   font-weight: bold;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.649);
+  color: rgb(8, 131, 35);
 }
 
 .moleup {

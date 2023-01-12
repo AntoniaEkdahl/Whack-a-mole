@@ -34,7 +34,7 @@ export class MoleService {
   }
   
     //method that take a random cell and add to its element class so the mole will be visable for 4 seconds.
-    public moleUpDown() {
+     moleUpDown() {
       let mole = document.querySelectorAll('.mole');
       const hole = this.randomCell(mole);
       console.log(hole);
