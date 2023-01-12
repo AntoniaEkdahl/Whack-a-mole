@@ -1,18 +1,8 @@
-<div class="gameContainer">
-  <div>
-    <div>Time remaining:</div>
-    <div class="gameTimer">{{ this.timer }}</div>
-  </div>
-  <div>
-    <div>Points:</div>
-    <div class="gamePoints"> {{this.scoreCounter}}</div>
-  </div>
-  <button class="btn" (click)="startGame()" [disabled]="btnDisabled" >START GAME</button>
-</div>
+<app-game-details [points]="points.points"></app-game-details>
 
 <div class="board">
   <div class="cell">
-    <div class="mole" (click)="onMoleClick($event)" ></div>
+    <div class="mole" (click)="onMoleClick($event)"></div>
   </div>
   <div class="cell">
     <div class="mole" (click)="onMoleClick($event)"></div>
@@ -87,6 +77,3 @@
     <div class="mole" (click)="onMoleClick($event)"></div>
   </div>
 </div>
-
-
-

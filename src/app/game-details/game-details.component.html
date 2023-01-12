@@ -1,0 +1,13 @@
+<div class="gameContainer">
+  <div>
+    <div>Time remaining:</div>
+    <div class="gameTimer">{{ this.timer.seconds }}</div>
+  </div>
+  <div>
+    <div>Points:</div>
+    <div class="gamePoints">{{ this.points }}</div>
+  </div>
+  <button class="btn" (click)="startGame()" [disabled]="btn.disabled">
+    START GAME
+  </button>
+</div>

@@ -1,21 +1,25 @@
-.board {
-  width: 690px;
+.gameContainer {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: auto;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  gap: 160px;
 }
 
-.cell {
-  width: 130px;
-  height: 130px;
-  border: 1px solid black;
-  background-color: rgb(74, 35, 2);
-  overflow: hidden;
-  background-image: url("src/assets/mole-invisible.png");
-  position: relative;
-  background-size: contain;
-  background-repeat: no-repeat;
+.gameTimer,
+.gamePoints {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.btn {
+  height: 40px;
+  width: 140px;
+  border-radius: 30px;
+  border: solid black 3px;
+  font-size: 0.7em;
+  font-weight: bold;
+  background-color: white;
 }
 
 .moleup {
