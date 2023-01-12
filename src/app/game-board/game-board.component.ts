@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MoleService } from '../mole.service';
-import { PointsCounter } from '../points-Counter';
+import { PointsCounter } from '../pointsCounter';
 
 @Component({
   selector: 'app-game-board',

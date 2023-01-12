@@ -1,5 +1,5 @@
 <app-game-details [points]="points.points"></app-game-details>
-
+<div class="container">
 <div class="board">
   <div class="cell">
     <div class="mole" (click)="onMoleClick($event)"></div>
@@ -76,4 +76,7 @@
   <div class="cell">
     <div class="mole" (click)="onMoleClick($event)"></div>
   </div>
+</div>
+
+<app-navigation class="navigation-container"></app-navigation>
 </div>

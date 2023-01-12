@@ -8,12 +8,16 @@ import { GameBoardComponent } from './game-board/game-board.component';
 import { MoleService } from './mole.service';
 import { GameDetailsComponent } from './game-details/game-details.component';
 import { TimerService } from './timer.service';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GameBoardComponent,
-    GameDetailsComponent
+    GameDetailsComponent,
+    LeaderboardComponent,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,

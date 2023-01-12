@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TimerService } from './timer.service';
-import { PointsCounter } from './points-Counter';
-import { TimeUp } from './time-up';
+import { PointsCounter } from './pointsCounter';
+import { TimeUp } from './timeUp';
 
 @Injectable({
   providedIn: 'root',
@@ -26,7 +26,6 @@ export class MoleService {
     const i = Math.floor(Math.random() * cell.length);
     const hole = cell[i];
     if (hole === this.lastSelectedHole) {
-      console.log('same hole as last one');
       return this.randomCell(cell);
     }
     this.lastSelectedHole = hole;
@@ -35,6 +34,7 @@ export class MoleService {
   
     //method that take a random cell and add to its element class so the mole will be visable for 4 seconds.
      moleUpDown() {
+      console.log( this.randomTime(200,4000));
       let mole = document.querySelectorAll('.mole');
       const hole = this.randomCell(mole);
       hole.classList.add('moleup');

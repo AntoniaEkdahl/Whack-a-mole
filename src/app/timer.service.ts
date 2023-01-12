@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Timer } from './timer';
-import { TimeUp } from './time-up';
+import { TimeUp } from './timeUp';
 import { Btn } from './btnDisabled';
 
 @Injectable({
