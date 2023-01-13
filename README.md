@@ -1,6 +1,10 @@
 # WhackAMole
+In this game by tapping/whack a mole you get 1 point. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.3.
+
+## Install
+Install dependencies: `npm install`
 
 ## Development server
 

@@ -11,12 +11,6 @@ export class TimerService {
 
   constructor() {}
 
-  // Method that will decrease time with -1 util it reaches 0.
-  timerDecreaseByOne() {
-    if (this.timer.timer > 0) {
-    }
-  }
-
   //Method that will countdown time,
   //when the timer reaches 0 the "start game"-btn will be activ again,
   //and end the interval and stop the mole from showing.
@@ -29,7 +23,6 @@ export class TimerService {
         this.btn.btndisabled = false;
         clearInterval(countdown);
       }
-      this.timerDecreaseByOne();
     }, 1000);
   }
 }
