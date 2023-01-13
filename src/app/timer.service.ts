@@ -1,21 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Timer } from './timer';
-import { TimeUp } from './timeUp';
-import { Btn } from './btnDisabled';
+import { Game } from './game';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TimerService {
-  timer: Timer = { seconds: 7 };
-  timeUp: TimeUp = { timeUp: false }; // to useto continue methods ex molesUpDown
-  btn: Btn = { disabled: false };
+  timer: Game = { timer: 7 };
+  timeUp: Game = { timeUp: false }; // to useto continue methods ex molesUpDown
+  btn: Game = { btndisabled: false };
 
   constructor() {}
 
   // Method that will decrease time with -1 util it reaches 0.
   timerDecreaseByOne() {
-    if (this.timer.seconds > 0) {
+    if (this.timer.timer > 0) {
     }
   }
 
@@ -23,12 +21,12 @@ export class TimerService {
   //when the timer reaches 0 the "start game"-btn will be activ again,
   //and end the interval and stop the mole from showing.
   startTimer() {
-    this.timer.seconds = 7; // reset countdown to correct game time when the game starts
+    this.timer.timer = 7; // reset countdown to correct game time when the game starts
     let countdown = setInterval(() => {
-      this.timer.seconds--;
-      if (this.timer.seconds === 0) {
+      this.timer.timer--;
+      if (this.timer.timer === 0) {
         this.timeUp.timeUp = true;
-        this.btn.disabled = false;
+        this.btn.btndisabled = false;
         clearInterval(countdown);
       }
       this.timerDecreaseByOne();

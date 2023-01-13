@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MoleService } from '../mole.service';
-import { PointsCounter } from '../pointsCounter';
+import { Game } from '../game';
 
 @Component({
   selector: 'app-game-board',
@@ -8,7 +8,7 @@ import { PointsCounter } from '../pointsCounter';
   styleUrls: ['./game-board.component.css'],
 })
 export class GameBoardComponent {
-  points:PointsCounter={points:0};
+  points:Game={points:0};
   
   constructor(
     private __moleService:MoleService

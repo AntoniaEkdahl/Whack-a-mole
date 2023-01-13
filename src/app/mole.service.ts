@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
 import { TimerService } from './timer.service';
-import { PointsCounter } from './pointsCounter';
-import { TimeUp } from './timeUp';
+import { Game } from './game';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MoleService {
   lastSelectedHole!: number; // doesnt really know why but VSC put in ! so it worked.
-  points:PointsCounter = {points:0};
-  timeUp!:TimeUp;
+  points:Game = {points:0};
+  timeUp!:Game;
   
   constructor(
     private __timerService:TimerService,

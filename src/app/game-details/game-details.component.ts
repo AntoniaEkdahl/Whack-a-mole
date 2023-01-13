@@ -1,8 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { TimerService } from '../timer.service';
-import { Timer } from '../timer';
-import { Btn } from '../btnDisabled';
+import { Game } from '../game';
 import { MoleService } from '../mole.service';
 
 @Component({
@@ -11,9 +10,9 @@ import { MoleService } from '../mole.service';
   styleUrls: ['./game-details.component.css'],
 })
 export class GameDetailsComponent {
-  timer!: Timer;
+  timer!: Game;
   @Input() points:number=0; 
-  btn!: Btn;
+  btn!: Game;
 
 constructor(
   private __timerService: TimerService,
@@ -27,7 +26,7 @@ constructor(
   //start the countdown timer,
   //activate the moles to pop up.
   startGame() {
-    this.btn.disabled = true; // start btn will not be able to click.
+    this.btn.btndisabled = true; // start btn will not be able to click.
     this.points = 0; // reset scorecount to 0.
     this.__timerService.startTimer();
     this.__timerService.timeUp.timeUp = false;

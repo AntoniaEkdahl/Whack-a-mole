@@ -1,26 +1,33 @@
 import { Component } from '@angular/core';
+import { Game } from '../game';
+import { TimerService } from '../timer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
   template: `
     <div>
-      <a routerLink="leaderboard">Leaderboard</a>
+      <button [disabled]="btn.btndisabled" (click)="goToLeaderboard()"> Leaderboard</button>
     </div>
   `,
   styles: [
     `
-      a {
+      button {
         text-decoration: none;
-        color: white;
-        font-size: 2em;
-        border: 3px solid;
-        padding: 10px;
-      }
-
-      a:hover {
         color: rgb(207, 181, 59);
+        font-size: 2em;
       }
     `,
   ],
 })
-export class NavigationComponent {}
+export class NavigationComponent {
+  btn!: Game;
+  constructor(
+    private __timerService: TimerService,
+    private __Router: Router) {
+    this.btn = this.__timerService.btn;
+  }
+  goToLeaderboard(){
+    this.__Router.navigate(['/leaderboard']);
+  }
+}

@@ -6,4 +6,9 @@ import { Injectable } from '@angular/core';
 export class LeaderboardService {
 
   constructor() { }
+
+  addHighscore(username: string, points: number) {
+  }
+
+  
 }

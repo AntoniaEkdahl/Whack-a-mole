@@ -1,25 +1,33 @@
-*{
-  color: rgb(207,181,59);
+* {
+  color: rgb(207, 181, 59);
   text-decoration: none;
 }
 
-.container{
+.container {
   text-align: center;
   margin-top: 50px;
 }
-.leaderboard-container{
+
+.leaderboard-container {
   margin-top: 100px;
 }
 
-h1{
+.highScore-container {
   margin-bottom: 100px;
 }
 
-a{
+a {
   border: 3px solid;
   padding: 10px;
 }
 
-a:hover{
+a:hover {
   color: white;
+}
+
+li {
+  list-style: decimal;
+  list-style-position: inside;
+  font-size: 1.5em;
+  padding-right: 350px;
 }
