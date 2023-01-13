@@ -10,5 +10,4 @@ export class LeaderboardService {
   addHighscore(username: string, points: number) {
   }
 
-  
 }

@@ -10,11 +10,10 @@ import { Game } from '../game';
 export class GameBoardComponent {
   points:Game={points:0};
   
-  constructor(
-    private __moleService:MoleService
-  ) { this.points.points = this.__moleService.points.points}
+  constructor( private __moleService:MoleService
+  ) {this.points.points = this.__moleService.points.points}
 
-    // When user click the mole that shows and ads +1 to score.
+  // When user click the mole that shows and ads +1 to score.
   // and the mole disappears
   onMoleClick(event: any) {
     this.points.points++;

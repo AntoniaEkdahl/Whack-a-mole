@@ -6,14 +6,11 @@
 .container {
   text-align: center;
   margin-top: 50px;
-
-
-.leaderboard-container {
-  margin-top: 100px;
 }
 
+.leaderboard-container,
 .highScore-container {
-  margin-bottom: 100px;
+  margin-top: 100px;
 }
 
 a {
@@ -30,4 +27,8 @@ li {
   list-style-position: inside;
   font-size: 1.5em;
   padding-right: 350px;
+}
+
+.span-name {
+ margin-right: 100px;
 }

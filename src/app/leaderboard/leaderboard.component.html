@@ -3,14 +3,14 @@
   <div class="leaderboard-container">
     <div class="highScore-container">
       <h2>HIGH SCORE</h2>
-      <ul>
-        <li>Antonia</li>
+      <ul *ngFor="let user of highscore | async">
+        <li>{{user.data.name}} {{user.data.points}}</li>
       </ul>
     </div>
     <div class="reaction-container">
       <h2>SHORTEST REACTION TIME</h2>
-      <ul>
-        <li>Antonia</li>
+      <ul *ngFor="let user of highscore | async">
+        <li>{{user.data.name}} {{user.data.reaction}}</li>
       </ul>
     </div>
   </div>

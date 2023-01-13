@@ -2,3 +2,13 @@ body {
   background-image: url("src/assets/grass.png");
 }
 
+.moleup {
+  width: 130px;
+  height: 130px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: appear 0.9s;
+  transition: all 0.4s;
+  background-image: url("src/assets/mole-visible.png");
+  top: 100%;
+}

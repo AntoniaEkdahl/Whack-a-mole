@@ -7,12 +7,12 @@ import { Game } from './game';
 })
 export class MoleService {
   lastSelectedHole!: number; // doesnt really know why but VSC put in ! so it worked.
-  points:Game = {points:0};
-  timeUp!:Game;
-  
-  constructor(
-    private __timerService:TimerService,
-  ) { this.timeUp = this.__timerService.timeUp };
+  points: Game = { points: 0 };
+  timeUp!: Game;
+
+  constructor(private __timerService: TimerService) {
+    this.timeUp = this.__timerService.timeUp;
+  }
 
   //Method that will return a random time after we insert the parameters
   randomTime(min: number, max: number): number {
@@ -30,17 +30,16 @@ export class MoleService {
     this.lastSelectedHole = hole;
     return hole;
   }
-  
-    //method that take a random cell and add to its element class so the mole will be visable for 4 seconds.
-     moleUpDown() {
-      console.log( this.randomTime(200,4000));
-      let mole = document.querySelectorAll('.mole');
-      const hole = this.randomCell(mole);
-      hole.classList.add('moleup');
-      setTimeout(() => {
-        hole.classList.remove('moleup');
-        if (!this.__timerService.timeUp.timeUp) this.moleUpDown();
-      }, 1000);
-    }
 
+  //method that take a random cell and add to its element class so the mole will be visable for 4 seconds.
+  moleUpDown() {
+    console.log(this.randomTime(200, 4000));
+    let mole = document.querySelectorAll('.mole');
+    const hole = this.randomCell(mole);
+    hole.classList.add('moleup');
+    setTimeout(() => {
+      hole.classList.remove('moleup');
+      if (!this.__timerService.timeUp.timeUp) this.moleUpDown();
+    }, 1000);
+  }
 }

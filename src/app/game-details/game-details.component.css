@@ -26,26 +26,3 @@
   color: rgb(8, 131, 35);
 }
 
-.moleup {
-  width: 130px;
-  height: 130px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  animation: appear 0.9s;
-  transition: all 0.4s;
-  background-image: url("src/assets/mole-visible.png");
-  top: 100%;
-  animation-name: moveUpDown;
-  animation-duration: 7s;
-  animation-timing-function: linear;
-}
-
-@keyframes moveUpDown {
-  0%,
-  100% {
-    bottom: -100%;
-  }
-  50% {
-    bottom: 0;
-  }
-}
