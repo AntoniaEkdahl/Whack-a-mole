@@ -1,81 +1,12 @@
-<app-game-details [points]="points.points"></app-game-details>
+<app-game-details [scoreboard]="points.points"></app-game-details>
 <div class="container">
   <div class="board">
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
-    <div class="cell">
-      <div class="mole" (click)="onMoleClick($event)"></div>
-    </div>
+    <div
+      *ngFor="let hole of holes"
+      class="hole"
+      [class.moleup]="hole.moleup"
+      (click)="onMoleClick(hole)"
+    ></div>
   </div>
   <app-navigation class="navigation-container"></app-navigation>
 </div>

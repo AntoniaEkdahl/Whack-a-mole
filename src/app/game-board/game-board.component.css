@@ -1,21 +1,16 @@
-.container {
+ .container {
   display: flex;
-}
-
-.navigation-container {
-  margin-top: 30px;
-}
+  margin-left: 200px;
+} 
 
 .board {
-  min-width: 690px;
-  max-width: 690px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: auto;
+  gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(5,120px);
+  grid-template-rows: repeat(5,120px);
 }
 
-.cell {
+.hole {
   width: 130px;
   height: 130px;
   background-color: rgba(74, 34, 2, 0.809);
@@ -27,4 +22,6 @@
   border-radius: 50%;
 }
 
-
+.moleup {
+  background-image: url("src/assets/mole-visible.png");
+}

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +16,7 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LeaderboardService } from './leaderboard.service';
 import { environment } from 'src/environment/environment';
+import { RegisterUserComponent } from './register-user/register-user.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { environment } from 'src/environment/environment';
     GameDetailsComponent,
     LeaderboardComponent,
     NavigationComponent,
+    RegisterUserComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    FormsModule,
     NgbModule
   ],
   providers: [

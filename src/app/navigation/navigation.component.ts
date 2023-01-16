@@ -17,8 +17,9 @@ import { Router } from '@angular/router';
       button {
         text-decoration: none;
         color: rgb(207, 181, 59);
-        font-size: 2em;
+        font-size: 1.5em;
         background-color: rgb(8, 131, 35);
+        margin: 30px 0 0 90px;
       }
       button[disabled] {
         background-color: rgba(160, 246, 179, 0.8);

@@ -5,9 +5,9 @@ import { Game } from './game';
   providedIn: 'root',
 })
 export class TimerService {
-  timer: Game = { timer: 7 };
-  timeUp: Game = { timeUp: false }; // to useto continue methods ex molesUpDown
+  timer: Game = { timer: 60 };
   btn: Game = { btndisabled: false };
+  points:Game = { points:0}
 
   constructor() {}
 
@@ -15,14 +15,15 @@ export class TimerService {
   //when the timer reaches 0 the "start game"-btn will be activ again,
   //and end the interval and stop the mole from showing.
   startTimer() {
-    this.timer.timer = 7; // reset countdown to correct game time when the game starts
+    this.timer.timer = 60; // reset countdown to correct game time when the game starts
+    this.points.points =0; 
     let countdown = setInterval(() => {
       this.timer.timer--;
       if (this.timer.timer === 0) {
-        this.timeUp.timeUp = true;
         this.btn.btndisabled = false;
         clearInterval(countdown);
       }
     }, 1000);
   }
+  
 }
