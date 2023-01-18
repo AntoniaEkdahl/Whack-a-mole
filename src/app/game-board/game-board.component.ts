@@ -31,7 +31,11 @@ export class GameBoardComponent {
       this.points.points++;
       hole.moleup = false;
       this.endTime.endTime = Date.now();
-      this.__moleService.reactionTime(this.endTime.endTime, this.__moleService.startTime.startTime); //run the method to count reaction time. 
+      clearTimeout(hole.moleTimer);
+
+      const startTime = hole.startTime
+      const endTime = Date.now()
+      this.__moleService.reactionTime(endTime, startTime)  //run the method to count reaction time. 
     }
   }
 }

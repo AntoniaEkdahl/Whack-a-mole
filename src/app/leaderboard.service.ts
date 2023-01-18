@@ -11,12 +11,13 @@ export class LeaderboardService {
   highscoreList!: AngularFirestoreCollection<User>;    // A local pointer to the collection
   reactionTime:any;
   reactionTimeList!: AngularFirestoreCollection<User>;    // A local pointer to the collection
-  user:User = {name:'', points:0}
+  user:User = {name: ''}
+  id:string;
 
   constructor(private __afs: AngularFirestore) { }
 
   addUser(user:User){
-    user.id = this.__afs.createId();
+   // user.id = this.__afs.createId();
     return this.__afs.collection('highscore').add(user)
   }
 
@@ -31,10 +32,11 @@ export class LeaderboardService {
    }
 
    updateUser(user:User){
-    this.__afs.doc('highscore/'+user.id).update(this.user)
+    this.__afs.doc('highscore/'+user).update(this.user)
    }
 
-}
+   getID(User:User){
+   }
+   
 
-  // addHighscore(username: string, points: number) {
-  //   this.__afs.doc('highscore/'+this.id).update(this.newUser);
+}

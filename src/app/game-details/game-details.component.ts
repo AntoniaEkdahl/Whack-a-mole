@@ -3,7 +3,6 @@ import { TimerService } from '../timer.service';
 import { Game } from '../game';
 import { MoleService } from '../mole.service';
 import { LeaderboardService } from '../leaderboard.service';
-import { User } from '../user';
 
 @Component({
   selector: 'app-game-details',
@@ -35,5 +34,7 @@ constructor(
     this.scoreboard = 0; // reset scorecount to 0.
     this.__timerService.startTimer();
     this.__moleService.moleUpDown();
+    this.__moleService.ArrayOfReactionTime = []; // Empty the array of reaction time. 
+
   }
 }
