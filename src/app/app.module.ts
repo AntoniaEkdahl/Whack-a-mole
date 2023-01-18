@@ -17,7 +17,6 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { LeaderboardService } from './leaderboard.service';
 import { environment } from 'src/environment/environment';
 import { RegisterUserComponent } from './register-user/register-user.component';
-import { UpdateUserComponent } from './update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,6 @@ import { UpdateUserComponent } from './update-user/update-user.component';
     LeaderboardComponent,
     NavigationComponent,
     RegisterUserComponent,
-    UpdateUserComponent,
   ],
   imports: [
     BrowserModule,

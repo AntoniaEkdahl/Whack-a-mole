@@ -12,7 +12,6 @@ export class GameBoardComponent {
   points: Game = { points: 0 };
   holes!: Game[];
   timer!: Game;
-  endTime: Game = {endTime:0};
 
   constructor(
     private __moleService: MoleService,
@@ -21,21 +20,20 @@ export class GameBoardComponent {
     this.holes = this.__moleService.holes,
     this.timer = this.__timerService.timer,
     this.points = this.__timerService.points;
-    this.endTime = this.__moleService.endTime;
   }
 
-  // When user click the mole that shows and ads +1 to score.
-  // and the mole disappears
+  // When user click the mole that shows it ads +1 to score and the mole disappears,
+  // and the timeout will stop in case so its not in the background and disturbs,
+  // and the reaction time is calculated. 
   onMoleClick(hole: Game) {
     if (hole.moleup) {
       this.points.points++;
       hole.moleup = false;
-      this.endTime.endTime = Date.now();
       clearTimeout(hole.moleTimer);
-
-      const startTime = hole.startTime
-      const endTime = Date.now()
-      this.__moleService.reactionTime(endTime, startTime)  //run the method to count reaction time. 
+      const startTime = hole.startTime;
+      const endTime = Date.now();
+       //run the method that counts reaction time. 
+      this.__moleService.reactionTime(endTime, startTime);
     }
   }
 }
