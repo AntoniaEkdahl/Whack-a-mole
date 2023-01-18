@@ -12,6 +12,7 @@ export class GameBoardComponent {
   points: Game = { points: 0 };
   holes!: Game[];
   timer!: Game;
+  endTime: Game = {endTime:0};
 
   constructor(
     private __moleService: MoleService,
@@ -20,6 +21,7 @@ export class GameBoardComponent {
     this.holes = this.__moleService.holes,
     this.timer = this.__timerService.timer,
     this.points = this.__timerService.points;
+    this.endTime = this.__moleService.endTime;
   }
 
   // When user click the mole that shows and ads +1 to score.
@@ -28,6 +30,8 @@ export class GameBoardComponent {
     if (hole.moleup) {
       this.points.points++;
       hole.moleup = false;
+      this.endTime.endTime = Date.now();
+      this.__moleService.reactionTime(this.endTime.endTime, this.__moleService.startTime.startTime); //run the method to count reaction time. 
     }
   }
 }

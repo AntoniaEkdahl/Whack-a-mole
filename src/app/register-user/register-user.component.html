@@ -1,9 +1,14 @@
-<div>
+<div class="register-container">
   <form (ngSubmit)="onSubmit()" #addUserName="ngForm">
-    <div class="form-group">
-      <label for="name">Username:</label>
-      <input type="text" id="name" name="name" class="form-control" [(ngModel)]="newUser.name" #name="ngModel" >
+    <div class="container">
+      <div>
+        <label for="name">Your username:</label>
+        <input type="text" id="name" name="name" class="form-control mt-2" [(ngModel)]="User.name" #name="ngModel" required>
+      </div>
+        <button class="btn btn-success mt-3" type="submit" [disabled]="!addUserName.form.valid">Register</button>
     </div>
-    <button class="btn btn-dark" type="submit" >I'm ready!</button>
   </form>
 </div>
+
+
+

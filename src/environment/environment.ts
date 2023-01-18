@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  firebaseConfig:{
+  firebaseConfig: {
     apiKey: "AIzaSyAoqsNRLSQjc-ttYJ3R_KSDI1HL9SfUJMI",
     authDomain: "whack-a-molefire.firebaseapp.com",
     projectId: "whack-a-molefire",

@@ -1,3 +1,17 @@
 *{
-  color: white;
+  color: rgb(207, 181, 59);
+  font-size: 1.1em;
 }
+
+.register-container{
+  margin: 0 auto;
+  width: 400px;
+  height: 150px;
+  margin-top: 50px;
+}
+
+.container{
+  display: flex;
+  gap: 20px;
+}
+

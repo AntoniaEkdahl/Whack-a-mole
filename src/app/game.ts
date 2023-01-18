@@ -3,4 +3,7 @@ export type Game = {
   btndisabled?:boolean;
   moleup?: boolean;
   points?:number;
+  reaction?:number;
+  startTime?:number;
+  endTime?:number;
 }

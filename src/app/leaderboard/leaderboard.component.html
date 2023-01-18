@@ -1,17 +1,37 @@
 <div class="container">
   <a routerLink="">BACK TO GAME</a>
-  <div class="leaderboard-container">
-    <div class="highScore-container">
-      <h2>HIGH SCORE</h2>
-      <ul *ngFor="let user of highscore | async">
-        <li>{{user.data.name}} {{user.data.points}}</li>
-      </ul>
-    </div>
+  <div class="result-container">
+    <h2>HIGH SCORES</h2>
+    <table class="table table-borderless highscore-container">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of highscore | async">
+          <td>{{ user.data.name }}</td>
+          <td>{{ user.data.points | number }}</td>
+        </tr>
+      </tbody>
+    </table>
     <div class="reaction-container">
-      <h2>SHORTEST REACTION TIME</h2>
-      <ul *ngFor="let user of highscore | async">
-        <li>{{user.data.name}} {{user.data.reaction}}</li>
-      </ul>
+      <h2>FASTEST REACTION TIME</h2>
+      <table class="table table-borderless">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+         <tr *ngFor="let user of reactionTime | async">
+            <td>{{ user.data.name }}</td>
+            <td>{{ user.data.reaction }} ms</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
