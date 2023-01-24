@@ -31,12 +31,12 @@ export class GameDetailsComponent {
     if (this.username === undefined) {
       this.registerUser = true;
       this.btn.btndisabled = true; // start btn will not be able to click.
+      this.scoreboard = 0; // reset scorecount to 0.
+      this.__timerService.ArrayOfReactionTime = []; // Empty/reset the array of reaction time.
     }
     if (this.username !== undefined) {
       this.registerUser = false;
       this.btn.btndisabled = true; // start btn will not be able to click.
-      this.scoreboard = 0; // reset scorecount to 0.
-      this.__timerService.ArrayOfReactionTime = []; // Empty/reset the array of reaction time.
       this.__timerService.startTimer();
       this.__moleService.moleUpDown();
     }

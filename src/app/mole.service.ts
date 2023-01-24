@@ -107,6 +107,6 @@ export class MoleService {
         // Stops mole from displaying.
         clearInterval(randomTimeMole);
       }
-    }, this.randomTime(400, 900));
+    }, this.randomTime(300, 700));
   }
 }
