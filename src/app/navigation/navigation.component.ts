@@ -38,6 +38,7 @@ export class NavigationComponent {
   constructor(private __timerService: TimerService, private __Router: Router) {
     this.btn = this.__timerService.btn;
   }
+  //When press button will navigate to leaderboard component. 
   goToLeaderboard() {
     this.__Router.navigate(['/leaderboard']);
   }

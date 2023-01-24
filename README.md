@@ -1,5 +1,5 @@
 # WhackAMole
-In this game by tapping/whack a mole you get 1 point. 
+In this game by whack a mole you get 1 point using HTML, CSS and JavaScript. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.3.
 

@@ -17,6 +17,7 @@ export class LeaderboardComponent implements OnInit {
       (this.reactionTime = this.__leaderboardService.reactionTime);
   }
 
+  //Get the highscore and put in varable to render in HTML
   getHighScore() {
     this.highscore = this.__leaderboardService.getHighScoreUsers().pipe(
       map((action) => {
@@ -29,6 +30,7 @@ export class LeaderboardComponent implements OnInit {
     );
   }
 
+  //Get the reactiontime and put in varable to render in HTML
   getReactionTime() {
     this.reactionTime = this.__leaderboardService.getReactionTime().pipe(
       map((action) => {
@@ -41,6 +43,7 @@ export class LeaderboardComponent implements OnInit {
     );
   }
 
+  //When this component shows it will start to run.
   ngOnInit() {
     this.getHighScore();
     this.getReactionTime();

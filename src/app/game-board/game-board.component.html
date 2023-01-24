@@ -2,7 +2,8 @@
 <app-game-details [scoreboard]="points.points"></app-game-details>
 <div class="container">
   <div class="board">
-    <div
+    <!--  Each hole will get one object with: moleup, moleTimeout, startReactionTime from the array of holes- stored in moleservice. -->
+    <div 
       *ngFor="let hole of holes"
       class="hole"
       [class.moleup]="hole.moleup"

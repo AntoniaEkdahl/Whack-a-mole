@@ -9,10 +9,9 @@ import { TimerService } from '../timer.service';
   styleUrls: ['./register-user.component.css'],
 })
 export class RegisterUserComponent {
- @Output() theUsername:EventEmitter<string> = new EventEmitter();
+ @Output() theUsername:EventEmitter<string> = new EventEmitter(); //To send the username to game-details component. 
  public username: string = '';
   btn!: State;
-  @Input() registerUser:boolean;
 
   constructor(
     private __timerService: TimerService,
@@ -21,9 +20,7 @@ export class RegisterUserComponent {
   }
 
   onSubmit() {
-    this.theUsername.emit(this.username);
+    this.theUsername.emit(this.username); //  Send username data to game-details component (connected with its HTML)
     this.__leaderboardService.usernameChanged(this.username);
-    this.btn.btndisabled = false;
-    this.registerUser = false;
-  }
+    this.btn.btndisabled = false;  }
 }

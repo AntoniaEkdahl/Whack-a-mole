@@ -21,8 +21,8 @@ export class GameBoardComponent {
     this.points = this.__timerService.points
   }
 
-  // When user click the mole that shows it ads +1 to score and the mole disappears,
-  // and the timeout will stop in case so its not in the background and disturbs,
+  // When user click the mole it will take the hole that it is in as a parameter
+  // and  ads +1 to score and the mole disappears, the timeout will stop in case so its not in the background and disturbs,
   // and the reaction time is calculated.
   onMoleClick(hole: State) {
     if (hole.moleup) {

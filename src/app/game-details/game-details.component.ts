@@ -10,7 +10,7 @@ import { MoleService } from '../mole.service';
 })
 export class GameDetailsComponent {
   timer!: State;
-  @Input() scoreboard = 0;
+  @Input() scoreboard = 0; //We use input to get the data from gamebard component, connected in its HTML. 
   btn!: State;
   username: string;
   registerUser: boolean = false;
@@ -23,25 +23,25 @@ export class GameDetailsComponent {
     this.btn = this.__timerService.btn
   }
 
-  //When the game starts the "start game"-btn will not function,
-  //reset points to 0,
-  //start the countdown timer,
-  //activate the moles to pop up.
-  startGame() {
-    if (this.username === undefined) {
-      this.registerUser = true;
-      this.btn.btndisabled = true; // start btn will not be able to click.
-      this.scoreboard = 0; // reset scorecount to 0.
-      this.__timerService.ArrayOfReactionTime = []; // Empty/reset the array of reaction time.
-    }
-    if (this.username !== undefined) {
-      this.registerUser = false;
-      this.btn.btndisabled = true; // start btn will not be able to click.
-      this.__timerService.startTimer();
+
+  //When user press start game btn and "username-varable" from register-user component is undefied an input will show to enter username.  
+  //When username is enterd the variable is not undefined anymore and start game btn will be able to press and now the game will start. 
+   startGame() {
+     if (this.username === undefined) {
+       this.registerUser = true; // show username input (with ngIF in HTML)
+       this.btn.btndisabled = true; // start&leaderboard btn will not be able to click.
+       this.scoreboard = 0; // reset scorecount to 0.
+       this.__timerService.ArrayOfReactionTime = []; // Empty/reset the array of reaction time.
+     }
+     if (this.username !== undefined) {
+       this.registerUser = false; //remove username input (with ngIF in HTML)
+       this.btn.btndisabled = true; // start&leaderboard btn will not be able to click.
+       this.__timerService.startTimer();
       this.__moleService.moleUpDown();
-    }
+     }
   }
 
+  //Get the eventemitter from register-user component to use in if-statment to enter username. Connected in this HTML. 
   getUsername(data) {
     this.username = data;
   }

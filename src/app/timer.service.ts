@@ -10,13 +10,12 @@ export class TimerService {
   timer: State = { timer: 60 };
   btn: State = { btndisabled: false };
   points: State = { points: 0 };
-  user: User = { name: '', points: 0, reaction: 0 };
+  user: User = { name: '', points: 0, reaction: 0 }; // Variable that we want to send to firebase
   ArrayOfReactionTime: number[] = [];
   fastestReactionTime: number;
 
-
   constructor(private __leaderboardService: LeaderboardService) {
-    this.__leaderboardService.getUsername().subscribe((data) => {
+    this.__leaderboardService.getUsername().subscribe((data) => { // Listen to when the username has changed and send to user.name variable. 
       this.user.name = data;
     });
   }
@@ -41,6 +40,7 @@ export class TimerService {
   //Method that will countdown time,
   //when the timer reaches 0 the "start game"-btn will be activ again,
   //and end the interval and stop the mole from showing.
+  // and user data sends to firestore database. 
   startTimer() {
     this.timer.timer = 60; // reset countdown to correct game time when the game starts
     this.points.points = 0;
@@ -52,7 +52,7 @@ export class TimerService {
         this.user.points = this.points.points;
         this.getFastestReactiontime(this.ArrayOfReactionTime);
         this.user.reaction = this.fastestReactionTime;
-        this.__leaderboardService.addUser(this.user);
+        this.__leaderboardService.addUser(this.user); //user data sends to firestore database. 
       }
     }, 1000);
   }
