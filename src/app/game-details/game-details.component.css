@@ -7,7 +7,7 @@
   color: rgba(255, 255, 255, 0.649);
   font-weight: bold;
   text-transform: uppercase;
-  margin: 20px 200px 20px 0;
+  margin: 50px 300px 20px 20px;
 }
 
 .gameTimer,
@@ -20,9 +20,18 @@
   text-decoration: none;
   color: rgb(207, 181, 59);
   background-color: rgb(8, 131, 35);
-  border: none;
+  border: none; 
+  width: auto;
+  border-radius: 0;
+  box-shadow: 0 10px 20px -8px rgb(207, 181, 59);
+}  
+
+.btn:active{
+  background-color: rgba(98, 243, 129, 0.8);
+  color: rgb(207, 181, 59);
 }
 
 button[disabled] {
   background-color: rgba(160, 246, 179, 0.8);
 }
+

@@ -7,8 +7,8 @@
     <div>Points:</div>
     <div class="gamePoints">{{ this.scoreboard }}</div>
   </div>
-  <button class="btn btn-primary" (click)="startGame()" [disabled]="btn.btndisabled">
-    START GAME
+  <button class="btn btn-primary button" (click)="startGame()" [disabled]="btn.btndisabled">
+    {{gameBtn}}
   </button>
 </div>
 <app-register-user

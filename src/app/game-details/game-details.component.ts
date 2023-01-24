@@ -14,6 +14,7 @@ export class GameDetailsComponent {
   btn!: State;
   username: string;
   registerUser: boolean = false;
+  gameBtn:string = 'Start Game'
 
   constructor(
     private __timerService: TimerService,
@@ -32,6 +33,7 @@ export class GameDetailsComponent {
        this.btn.btndisabled = true; // start&leaderboard btn will not be able to click.
        this.scoreboard = 0; // reset scorecount to 0.
        this.__timerService.ArrayOfReactionTime = []; // Empty/reset the array of reaction time.
+       this.gameBtn = `Let's play!`
      }
      if (this.username !== undefined) {
        this.registerUser = false; //remove username input (with ngIF in HTML)

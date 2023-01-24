@@ -1,13 +1,14 @@
 * {
   color: rgb(207, 181, 59);
   font-size: 1.1em;
+  border: none;
+  border-radius: 0;
 }
 
 .register-container {
-  margin: 0 auto;
+  margin: 0px 470px;
   width: 400px;
-  height: 150px;
-  margin-top: 50px;
+  height: 150px;  
 }
 
 .container {
@@ -15,15 +16,23 @@
   gap: 40px;
 }
 
-.btn{
+.btn {
   height: 50px;
+  text-decoration: none;
   color: rgb(207, 181, 59);
   background-color: rgb(8, 131, 35);
+  box-shadow: 0 10px 20px -8px rgb(207, 181, 59);
+}
+
+.btn:active {
+  background-color: rgba(98, 243, 129, 0.8);
+  color: rgb(207, 181, 59);
 }
 
 button[disabled] {
   background-color: rgba(160, 246, 179, 0.8);
 }
+
 .btn-container{
 margin-top: 32px;
 }
