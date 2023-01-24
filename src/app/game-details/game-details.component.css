@@ -1,6 +1,6 @@
 .gameContainer {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   font-size: 1.1em;
   gap: 100px;
@@ -15,14 +15,24 @@
   font-size: 2em;
 }
 
-.btn {
+/* .btn {
   height: 40px;
   width: 140px;
-  border-radius: 30px;
-  border: solid black 3px;
+  border: solid rgb(8, 131, 35) 5px;
   font-size: 0.7em;
   font-weight: bold;
   background-color: rgba(255, 255, 255, 0.649);
   color: rgb(8, 131, 35);
+} */
+
+.btn {
+  font-size: 1.5em;
+  text-decoration: none;
+  color: rgb(207, 181, 59);
+  background-color: rgb(8, 131, 35);
+  border: none;
 }
 
+button[disabled] {
+  background-color: rgba(160, 246, 179, 0.8);
+}

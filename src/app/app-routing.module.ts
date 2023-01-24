@@ -6,8 +6,7 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 
 const routes: Routes = [
   {path:'', component:GameBoardComponent},
-  {path:'leaderboard', component:LeaderboardComponent},
-  {path:'registeruser', component:RegisterUserComponent}
+  {path:'leaderboard', component:LeaderboardComponent}
 ];
 
 @NgModule({

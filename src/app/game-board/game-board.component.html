@@ -1,12 +1,14 @@
+<div class="board-container">
 <app-game-details [scoreboard]="points.points"></app-game-details>
 <div class="container">
   <div class="board">
     <div
-     *ngFor="let hole of holes"
+      *ngFor="let hole of holes"
       class="hole"
       [class.moleup]="hole.moleup"
       (click)="onMoleClick(hole)"
     ></div>
   </div>
   <app-navigation class="navigation-container"></app-navigation>
+</div>
 </div>

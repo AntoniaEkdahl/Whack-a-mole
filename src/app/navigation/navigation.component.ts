@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Game } from '../game';
+import { State } from '../state';
 import { TimerService } from '../timer.service';
 import { Router } from '@angular/router';
 
@@ -7,20 +7,26 @@ import { Router } from '@angular/router';
   selector: 'app-navigation',
   template: `
     <div>
-      <button [disabled]="btn.btndisabled" (click)="goToLeaderboard()">
+      <button
+        class="btn btn-primary"
+        [disabled]="btn.btndisabled"
+        (click)="goToLeaderboard()"
+      >
         Leaderboard
       </button>
     </div>
   `,
   styles: [
     `
-      button {
+      .btn {
+        font-size: 1.5em;
         text-decoration: none;
         color: rgb(207, 181, 59);
-        font-size: 1.5em;
         background-color: rgb(8, 131, 35);
+        border: none;
         margin: 30px 0 0 90px;
       }
+
       button[disabled] {
         background-color: rgba(160, 246, 179, 0.8);
       }
@@ -28,7 +34,7 @@ import { Router } from '@angular/router';
   ],
 })
 export class NavigationComponent {
-  btn!: Game;
+  btn!: State;
   constructor(private __timerService: TimerService, private __Router: Router) {
     this.btn = this.__timerService.btn;
   }

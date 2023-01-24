@@ -7,9 +7,14 @@
     <div>Points:</div>
     <div class="gamePoints">{{ this.scoreboard }}</div>
   </div>
-  <button class="btn" (click)="startGame()" [disabled]="btn.btndisabled">
+  <button class="btn btn-primary" (click)="startGame()" [disabled]="btn.btndisabled">
     START GAME
   </button>
 </div>
-<!-- <app-register-user *ngIf="registerUser"></app-register-user> -->
+<app-register-user
+  *ngIf="registerUser"
+  [registerUser]="registerUser"
+  (theUsername)="getUsername($event)"
+></app-register-user>
 
+<!--   -->

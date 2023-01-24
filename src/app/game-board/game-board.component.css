@@ -1,18 +1,22 @@
- .container {
+.board-container{
+margin-left: 100px;
+}
+
+.container {
   display: flex;
-  margin-left: 200px;
-} 
+  justify-content: center;
+}
 
 .board {
-  gap: 25px;
+  gap: 20px;
   display: grid;
-  grid-template-columns: repeat(5,120px);
-  grid-template-rows: repeat(5,120px);
+  grid-template-columns: repeat(5, 100px);
+  grid-template-rows: repeat(5, 100px);
 }
 
 .hole {
-  width: 130px;
-  height: 130px;
+  width: 100px;
+  height: 100px;
   background-color: rgba(74, 34, 2, 0.809);
   overflow: hidden;
   background-image: url("src/assets/mole-invisible.png");

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MoleService } from '../mole.service';
-import { Game } from '../game';
+import { State } from '../state';
 import { TimerService } from '../timer.service';
 
 @Component({
@@ -9,31 +9,30 @@ import { TimerService } from '../timer.service';
   styleUrls: ['./game-board.component.css'],
 })
 export class GameBoardComponent {
-  points: Game = { points: 0 };
-  holes!: Game[];
-  timer!: Game;
+  points: State = { points: 0 };
+  holes!: State[];
+
 
   constructor(
     private __moleService: MoleService,
     public __timerService: TimerService
   ) {
     this.holes = this.__moleService.holes,
-    this.timer = this.__timerService.timer,
-    this.points = this.__timerService.points;
+    this.points = this.__timerService.points
   }
 
   // When user click the mole that shows it ads +1 to score and the mole disappears,
   // and the timeout will stop in case so its not in the background and disturbs,
-  // and the reaction time is calculated. 
-  onMoleClick(hole: Game) {
+  // and the reaction time is calculated.
+  onMoleClick(hole: State) {
     if (hole.moleup) {
       this.points.points++;
       hole.moleup = false;
-      clearTimeout(hole.moleTimer);
-      const startTime = hole.startTime;
-      const endTime = Date.now();
-       //run the method that counts reaction time. 
-      this.__moleService.reactionTime(endTime, startTime);
+      clearTimeout(hole.moleTimeout);
+      const startReactionTime = hole.startReactionTime;
+      const endReactionTime = Date.now();
+      //run the method that counts reaction time.
+      this.__timerService.reactionTime(endReactionTime, startReactionTime);
     }
   }
 }

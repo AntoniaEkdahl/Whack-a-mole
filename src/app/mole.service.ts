@@ -1,42 +1,40 @@
 import { Injectable } from '@angular/core';
 import { TimerService } from './timer.service';
-import { Game } from './game';
+import { State } from './state';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MoleService {
-  timer!: Game;
-  //Everyhole has its own mole, moleTimer for Timeout and a startTime. 
-  holes: Game[] = [
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
-    { moleup: false, moleTimer: 0, startTime: 0 },
+  timer!: State;
+  //Every hole has its own mole, moleTimeout for Timeout and a startReactionTime.
+  holes: State[] = [
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
+    { moleup: false, moleTimeout: 0, startReactionTime: 0 },
   ];
-  ArrayOfReactionTime: number[] = [];
-  fastestReactionTime: number;
 
   constructor(private __timerService: TimerService) {
     this.timer = this.__timerService.timer;
@@ -49,7 +47,7 @@ export class MoleService {
 
   //Method that will choose a randomHole and return it
   //if whole is occupied return false
-  randomHole(holes: Game[]) {
+  randomHole(holes: State[]) {
     const i = Math.floor(Math.random() * this.holes.length);
     let hole = holes[i];
     if (hole.moleup === true) {
@@ -65,26 +63,9 @@ export class MoleService {
     });
   }
 
-  //Method that counts the reactiontime from when the mole appears and when the user click the mole.
-  reactionTime(endTime: number, startTime: number) {
-    const difference = endTime - startTime;
-    this.ArrayOfReactionTime.push(difference);
-  }
-
-  //Method that will sort the array of number with the smalest first and save the first number and in a variable.
-  getFastestReactiontime(Array: number[]) {
-    const sortedArray = Array.sort(this.compareNumerically); // sort the array with reatctiontime
-    this.fastestReactionTime = sortedArray[0];
-  }
-
-  //Method to use with .sort(), and it will sort an array of numbers, smallest first.
-  compareNumerically(a: number, b: number) {
-    return a - b;
-  }
-
   //Method that will loop through the holes and checks for number of moles shown to the user
-  // if its more than or equal to 3 it will return true. 
-  calculateNumberOfMoles(holes: Game[]): boolean {
+  // if its more than or equal to 3 it will return true.
+  calculateNumberOfMoles(holes: State[]): boolean {
     let numMole: number = 0;
     for (let i = 0; i < holes.length; i++) {
       if (holes[i].moleup === true) {
@@ -104,9 +85,9 @@ export class MoleService {
     // Shows the Mole in a random time
     let randomTimeMole = setInterval(() => {
       const shouldNotPopUp = this.calculateNumberOfMoles(this.holes);
-      //if shouldNotPopUp === true, it means we have 3 visable moles already.
+      // if shouldNotPopUp === true, it means we have 3 visable moles already.
       if (shouldNotPopUp) {
-        console.log('nopop');
+        console.log('oops, already 3 moles');
         return;
       }
       const hole = this.randomHole(this.holes);
@@ -116,17 +97,16 @@ export class MoleService {
         return;
       }
       hole.moleup = true;
-      hole.startTime = Date.now();
+      hole.startReactionTime = Date.now();
       // Removes the Mole after 4 seconds
-      hole.moleTimer = setTimeout(() => {
+      hole.moleTimeout = setTimeout(() => {
         hole.moleup = false;
       }, 4000);
       if (this.timer.timer === 0) {
         this.removeAllMoles();
         // Stops mole from displaying.
         clearInterval(randomTimeMole);
-        this.getFastestReactiontime(this.ArrayOfReactionTime);
       }
-    }, this.randomTime(400, 800));
+    }, this.randomTime(400, 900));
   }
 }

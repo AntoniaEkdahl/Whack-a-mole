@@ -1,17 +1,29 @@
-*{
+* {
   color: rgb(207, 181, 59);
   font-size: 1.1em;
 }
 
-.register-container{
+.register-container {
   margin: 0 auto;
   width: 400px;
   height: 150px;
   margin-top: 50px;
 }
 
-.container{
+.container {
   display: flex;
-  gap: 20px;
+  gap: 40px;
 }
 
+.btn{
+  height: 50px;
+  color: rgb(207, 181, 59);
+  background-color: rgb(8, 131, 35);
+}
+
+button[disabled] {
+  background-color: rgba(160, 246, 179, 0.8);
+}
+.btn-container{
+margin-top: 32px;
+}

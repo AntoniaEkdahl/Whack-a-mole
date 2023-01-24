@@ -3,7 +3,7 @@
   text-decoration: none;
 }
 
-h2{
+h2 {
   text-align: center;
   margin-bottom: 50px;
 }
@@ -13,11 +13,11 @@ h2{
 }
 
 .reaction-container {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
-.result-container{
-   margin-top: 100px;
+.result-container {
+  margin-top: 30px;
 }
 
 a {
@@ -36,4 +36,3 @@ table {
   padding-right: 350px;
   text-align: center;
 }
-
