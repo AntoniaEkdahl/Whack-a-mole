@@ -28,6 +28,9 @@ export class GameDetailsComponent {
   //When user press start game btn and "username-varable" from register-user component is undefied an input will show to enter username.  
   //When username is enterd the variable is not undefined anymore and start game btn will be able to press and now the game will start. 
    startGame() {
+    if (this.timer.timer === 0) {
+      this.username = undefined
+    }
      if (this.username === undefined) {
        this.registerUser = true; // show username input (with ngIF in HTML)
        this.btn.btndisabled = true; // start&leaderboard btn will not be able to click.
@@ -41,6 +44,7 @@ export class GameDetailsComponent {
        this.__timerService.startTimer();
       this.__moleService.moleUpDown();
      }
+   
   }
 
   //Get the eventemitter from register-user component to use in if-statment to enter username. Connected in this HTML. 
