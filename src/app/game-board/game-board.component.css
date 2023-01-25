@@ -19,7 +19,7 @@ margin-left: 200px;
 .hole {
   width: 100px;
   height: 100px;
-  /* background-color: rgba(74, 34, 2, 0.809); */
+  background-color: rgba(74, 34, 2, 0.809);
   overflow: hidden;
   background-image: url("src/assets/mole-invisible.png");
   position: relative;

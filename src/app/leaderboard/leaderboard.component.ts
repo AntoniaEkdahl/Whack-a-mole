@@ -9,7 +9,7 @@ import { User } from '../user';
   styleUrls: ['./leaderboard.component.css'],
 })
 export class LeaderboardComponent implements OnInit {
-  highscore!: any;
+  highscore: Observable<{ id: string; data: User; }[]>;
   reactionTime: Observable<{ id: string; data: User; }[]>;
 
   constructor(private __leaderboardService: LeaderboardService) {
