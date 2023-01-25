@@ -17,7 +17,6 @@ import { LeaderboardService } from './leaderboard.service';
 import { environment } from 'src/environment/environment';
 import { RegisterUserComponent } from './register-user/register-user.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

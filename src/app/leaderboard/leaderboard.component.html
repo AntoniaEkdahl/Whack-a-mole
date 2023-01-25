@@ -10,25 +10,23 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of highscore | async | slice:0:10">
+        <tr *ngFor="let user of highscore | async | slice : 0 : 10">
           <td>{{ user.data.name }}</td>
           <td>{{ user.data.points }}</td>
         </tr>
       </tbody>
     </table>
   </div>
-    <div class="reaction-container">
-      <h2>Honorable Reward - fastest reaction time</h2>
-      <table class="table table-borderless">
-        <thead>
-        </thead>
-        <tbody>
-          <tr *ngFor="let user of reactionTime | async | slice:0:1">
-            <td>{{ user.data.name}}</td>
-            <td>{{ user.data.reaction}} ms</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  
+  <div class="reaction-container">
+    <h2>Honorable Reward - fastest reaction time</h2>
+    <table class="table table-borderless">
+      <thead></thead>
+      <tbody>
+        <tr *ngFor="let user of reactionTime | async | slice : 0 : 1">
+          <td>{{ user.data.name }}</td>
+          <td>{{ user.data.reaction }} ms</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

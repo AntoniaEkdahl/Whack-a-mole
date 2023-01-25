@@ -12,7 +12,6 @@ export class GameBoardComponent {
   points: State = { points: 0 };
   holes!: State[];
 
-
   constructor(
     private __moleService: MoleService,
     public __timerService: TimerService

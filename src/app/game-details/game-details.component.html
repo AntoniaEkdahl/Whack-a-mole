@@ -7,14 +7,16 @@
     <div>Points:</div>
     <div class="gamePoints">{{ this.scoreboard }}</div>
   </div>
-  <button class="btn btn-primary button" (click)="startGame()" [disabled]="btn.btndisabled">
-    {{gameBtn}}
+  <button
+    class="btn btn-primary button"
+    (click)="startGame()"
+    [disabled]="btn.btndisabled">
+      {{ gameBtn }}
   </button>
 </div>
 <div class="registerContainer">
-<app-register-user
-  *ngIf="registerUser"
-  (theUsername)="getUsername($event)"
-></app-register-user>
+  <app-register-user
+    *ngIf="registerUser"
+    (theUsername)="getUsername($event)"
+  ></app-register-user>
 </div>
-

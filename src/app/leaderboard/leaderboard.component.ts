@@ -9,12 +9,12 @@ import { User } from '../user';
   styleUrls: ['./leaderboard.component.css'],
 })
 export class LeaderboardComponent implements OnInit {
-  highscore: Observable<{ id: string; data: User; }[]>;
-  reactionTime: Observable<{ id: string; data: User; }[]>;
+  highscore: Observable<{ id: string; data: User }[]>;
+  reactionTime: Observable<{ id: string; data: User }[]>;
 
   constructor(private __leaderboardService: LeaderboardService) {
-    (this.highscore = this.__leaderboardService.highscore),
-      (this.reactionTime = this.__leaderboardService.reactionTime);
+    this.highscore = this.__leaderboardService.highscore,
+    this.reactionTime = this.__leaderboardService.reactionTime
   }
 
   //Get the highscore and put in varable to render in HTML

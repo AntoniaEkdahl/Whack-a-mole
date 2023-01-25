@@ -8,12 +8,16 @@
 .register-container {
   margin: auto 0;
   width: 400px;
-  height: 150px;  
+  height: 150px;
 }
 
 .container {
   display: flex;
   gap: 40px;
+}
+
+.btn-container {
+  margin-top: 32px;
 }
 
 .btn {
@@ -31,8 +35,4 @@
 
 button[disabled] {
   background-color: rgba(160, 246, 179, 0.8);
-}
-
-.btn-container{
-margin-top: 32px;
 }

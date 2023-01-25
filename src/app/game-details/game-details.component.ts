@@ -24,7 +24,6 @@ export class GameDetailsComponent {
     this.btn = this.__timerService.btn
   }
 
-
   //When user press start game btn and "username-varable" from register-user component is undefied an input will show to enter username.  
   //When username is enterd the variable is not undefined anymore and start game btn will be able to press and now the game will start. 
    startGame() {
@@ -44,8 +43,8 @@ export class GameDetailsComponent {
        this.btn.btndisabled = true; // start&leaderboard btn will not be able to click.
        this.__timerService.startTimer();
       this.__moleService.moleUpDown();
+      this.gameBtn = 'Start Game'
      }
-   
   }
 
   //Get the eventemitter from register-user component to use in if-statment to enter username. Connected in this HTML. 
