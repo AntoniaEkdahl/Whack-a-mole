@@ -16,6 +16,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { LeaderboardService } from './leaderboard.service';
 import { environment } from 'src/environment/environment';
 import { RegisterUserComponent } from './register-user/register-user.component';
+import { TruncatePipe } from './truncate.pipe';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { RegisterUserComponent } from './register-user/register-user.component';
     LeaderboardComponent,
     NavigationComponent,
     RegisterUserComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,

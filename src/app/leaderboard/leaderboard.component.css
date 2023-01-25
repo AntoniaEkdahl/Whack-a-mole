@@ -1,23 +1,23 @@
 * {
-  color: rgb(207, 181, 59);
+  color: rgb(199, 168, 33);
   text-decoration: none;
 }
 
 h2 {
+  margin-bottom: 20px;
+  margin-top: 40px;
   text-align: center;
-  margin-bottom: 50px;
+  text-shadow: -2px 0 rgb(185, 88, 3), 0 2px rgb(185, 88, 3), 2px 0 rgb(185, 88, 3), 0 -2px rgb(185, 88, 3);
 }
 
 .container {
   margin-top: 50px;
 }
 
-.reaction-container {
-  margin-top: 50px;
-}
-
-.result-container {
-  margin-top: 30px;
+th, td {
+  width:150px;
+  text-align:center;
+  font-size: 1.3em;
 }
 
 a {
@@ -60,10 +60,3 @@ a:hover:after {
   left: 1px;
 }
 
-table {
-  list-style: decimal;
-  list-style-position: inside;
-  font-size: 1.3em;
-  padding-right: 350px;
-  text-align: center;
-}

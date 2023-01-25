@@ -11,8 +11,10 @@
     {{gameBtn}}
   </button>
 </div>
+<div class="registerContainer">
 <app-register-user
   *ngIf="registerUser"
   (theUsername)="getUsername($event)"
 ></app-register-user>
+</div>
 

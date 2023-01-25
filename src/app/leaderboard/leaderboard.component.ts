@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs';
+import { filter, map, Observable } from 'rxjs';
 import { LeaderboardService } from '../leaderboard.service';
 import { User } from '../user';
 
@@ -10,7 +10,7 @@ import { User } from '../user';
 })
 export class LeaderboardComponent implements OnInit {
   highscore!: any;
-  reactionTime!: any;
+  reactionTime: Observable<{ id: string; data: User; }[]>;
 
   constructor(private __leaderboardService: LeaderboardService) {
     (this.highscore = this.__leaderboardService.highscore),

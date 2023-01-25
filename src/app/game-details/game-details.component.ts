@@ -30,6 +30,7 @@ export class GameDetailsComponent {
    startGame() {
     if (this.timer.timer === 0) {
       this.username = undefined
+      this.timer.timer = 60;
     }
      if (this.username === undefined) {
        this.registerUser = true; // show username input (with ngIF in HTML)

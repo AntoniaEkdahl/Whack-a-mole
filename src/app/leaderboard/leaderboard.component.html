@@ -1,7 +1,7 @@
 <div class="container">
   <a routerLink="">Back to Game</a>
   <div class="result-container">
-    <h2>HIGH SCORES</h2>
+    <h2>TOP 10 HIGH SCORES</h2>
     <table class="table table-borderless highscore-container">
       <thead>
         <tr>
@@ -10,28 +10,25 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of highscore | async">
+        <tr *ngFor="let user of highscore | async | truncate:10">
           <td>{{ user.data.name }}</td>
-          <td>{{ user.data.points | number }}</td>
+          <td>{{ user.data.points }}</td>
         </tr>
       </tbody>
     </table>
+  </div>
     <div class="reaction-container">
-      <h2>FASTEST REACTION TIME</h2>
+      <h2>Honorable Reward - fastest reaction time</h2>
       <table class="table table-borderless">
         <thead>
-          <tr>
-            <th>Player</th>
-            <th>Score</th>
-          </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let user of reactionTime | async">
-            <td>{{ user.data.name }}</td>
-            <td>{{ user.data.reaction }} ms</td>
+          <tr *ngFor="let user of reactionTime | async | truncate:1">
+            <td>{{ user.data.name}}</td>
+            <td>{{ user.data.reaction}} ms</td>
           </tr>
         </tbody>
       </table>
     </div>
-  </div>
+  
 </div>

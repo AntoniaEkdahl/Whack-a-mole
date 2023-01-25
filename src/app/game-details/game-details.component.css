@@ -12,7 +12,12 @@
   font-weight: bold;
   text-transform: uppercase;  
   margin: 50px 300px 20px 20px;
+}
 
+.registerContainer{
+ display: flex;
+ justify-content: center;
+ margin-right: 250px;
 }
 
 .gameTimer,
