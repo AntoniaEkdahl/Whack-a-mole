@@ -42,7 +42,7 @@ export class TimerService {
   //and end the interval and stop the mole from showing.
   // and user data sends to firestore database. 
   startTimer() {
-    this.timer.timer = 60; // reset countdown to correct game time when the game starts
+    this.timer.timer = 30; // reset countdown to correct game time when the game starts
     this.points.points = 0;
     let countdown = setInterval(() => {
       this.timer.timer--;
